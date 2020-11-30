@@ -177,7 +177,7 @@
     <li data-time="1:56">
       Video 57
     </li>
-    <li data-time="4:04">
+    <li data-time="4:06">
       Video 58
     </li>
   </ul>
@@ -201,15 +201,18 @@ const seconds = timeNodes
     // below adds up all the times to a total
     .reduce((total, vidSeconds) => total + vidSeconds);
 
+    // use 'let' as variable will get reassined with new numbers
     let secondsLeft = seconds;
     // Math.floor lists only the whole numbers
     const hours = Math.floor(secondsLeft / 3600);
     // % tells you how many are left after you divide it
     secondsLeft = secondsLeft % 3600;
 
+    const mins = Math.floor(secondsLeft / 60);
+    secondsLeft = secondsLeft % 60;
 
 
-console.log(secondsLeft);
+console.log(hours, mins, secondsLeft);
 
 </script>
 </body>
