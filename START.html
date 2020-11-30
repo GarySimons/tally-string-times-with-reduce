@@ -197,8 +197,19 @@ const seconds = timeNodes
     .map(timeCode => {
         const [mins, secs] = timeCode.split(':').map(parseFloat);
         return (mins * 60) + secs;
-    });
-console.log(seconds);
+    })
+    // below adds up all the times to a total
+    .reduce((total, vidSeconds) => total + vidSeconds);
+
+    let secondsLeft = seconds;
+    // Math.floor lists only the whole numbers
+    const hours = Math.floor(secondsLeft / 3600);
+    // % tells you how many are left after you divide it
+    secondsLeft = secondsLeft % 3600;
+
+
+
+console.log(secondsLeft);
 
 </script>
 </body>
