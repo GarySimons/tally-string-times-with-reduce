@@ -184,10 +184,17 @@
 
 <script>
 
-// get anything that has with a data-time
-const timeNodes = document.querySelectorAll('[data-time]');
+// get anything that has with a data-time. Array.from turns it from a NodeList into an Array
+const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 
-console.log(timeNodes);
+// Alt version using spread [...]
+// const timeNodes = [...(document.querySelectorAll('[data-time]')];
+
+// Using map turns it from a array of list items into an array of strings
+const seconds = timeNodes
+    .map(node => node.dataset.time);
+
+console.log(seconds);
 
 </script>
 </body>
