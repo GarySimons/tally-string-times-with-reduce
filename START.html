@@ -193,7 +193,7 @@ const timeNodes = Array.from(document.querySelectorAll('[data-time]'));
 // Using map turns it from a array of list items into an array of strings
 const seconds = timeNodes
     .map(node => node.dataset.time)
-    // below splits them into minutes and seconds. map(parseFloat) will convert strinsg to numbers
+    // below splits them into minutes and seconds. map(parseFloat) will convert string to numbers
     .map(timeCode => {
         const [mins, secs] = timeCode.split(':').map(parseFloat);
         return (mins * 60) + secs;
